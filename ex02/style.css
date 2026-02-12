@@ -1,0 +1,171 @@
+/* Definir a fonte localmente */
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    text-decoration:none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+header, main, section {
+    margin: 40px 0 40px 40px;
+}
+
+.link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.88px;
+    text-align: center;
+    margin-left: 25px;
+    font-family: Poppins;
+    color: #17233D;
+}
+
+
+.wtf {
+    width: 124;
+    height: 51;
+    opacity: 1;
+    border-radius: 6px;
+    border-width: 1px;
+    background: #6FBF44;
+    padding: 15px 40px;
+    border: none;
+    color: #fff;
+}
+
+main img {
+    margin-left: 100px;
+}
+
+section {
+    display: inline-block;
+    margin-left: 100px;
+    width: 540px;
+}
+
+section h1 {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    line-height: 82px;
+    color: #161A49;
+}
+
+main img {
+    width: 595.18px;
+    height: 500px;
+    opacity: 1;
+    top: 246px;
+    left: 121px;
+}
+
+section * {
+    padding: 20px;
+}
+
+p {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 33px;
+    letter-spacing: 0.5px;
+    color: #4B505A;
+}
+
+section a {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+    color: #6FBF44;
+    text-decoration: none;
+}
+
+main section {
+    margin: 0 40px;
+}
+
+@media screen and (max-width:900px) {
+    a {
+        display: none;
+    
+    }
+
+    .wtf {
+        font-family: Poppins;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 100%;
+        letter-spacing: 1px;
+        margin-left: 175px;
+    }
+
+    main {
+        margin: 10px;
+    }
+
+    main img {
+        width: 90%;
+        height: 100%;
+        margin-left: 10px;
+    }
+
+    section h1 {
+        font-size: 30px;
+        line-height: 39px;
+    }
+
+    main section {
+        width: 100%;
+        margin: 10px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    section * {
+        padding: 10px;
+    }
+
+    section a{
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 1px;
+        display: inline;
+    }
+}
