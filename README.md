@@ -1,5 +1,4 @@
 <h1>Begin</h1>
-    <br><br>
     <p>Eu comecei no <a href="http://www.devclub.com.br/">DevClub</a></p>
      <br><br>
      <h2>:computer: Technologies</h2>
