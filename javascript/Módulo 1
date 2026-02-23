@@ -1,13 +1,42 @@
 ## Módulo 1
 
 1. Escreva um programa que exiba "Olá, mundo!" no console.
-JS 
+console.log("Olá, mundo!") 
 2. Escreva um programa que calcule a média de três números e exiba o resultado no console.
     - Para calcular a média você só precisa somar os 3 números e dividir por 3.
 
+let num1 = 8
+let num2 = 6
+let num3 = 10
+
+let media = (num1 + num2 + num3) / 3
+
+console.log("A média dos números é: " + media);
+
 3. Escreva um programa que verifique se um número é maior que 10 e exiba o resultado no console.
+let numero = 15
+
+if (numero > 10) {
+    console.log("O número " + numero + " é maior que 10");
+} else {
+    console.log("O número " + numero + " não é maior que 10");
+}
 
 4. Escreva um programa que verifique se um número é positivo e exiba o resultado no console.
+let numero = 7
+
+if (numero > 0) {
+    console.log("O número " + numero + " é positivo");
+} else if (numero < 0) {
+    console.log("O número " + numero + " é negativo");
+} else {
+    console.log("O número é zero");
+}
 
 5. Escreva um programa que calcule a soma de dois números e exiba o resultado utilizando uma template string. 
 Por exemplo, se os números forem 5 e 3, o programa deve exibir "A soma de 5 e 3 é igual a 8".
+let a = 5
+let b = 3
+let soma = a + b
+
+console.log(`A soma de ${a} e ${b} é igual a ${soma}`)
