@@ -27,6 +27,40 @@ const selector = document.querySelector("p") //. ou #
 
 const all = document.querySelectorAll("#main-input")
 
-console.log(selector.textContent) //so HTML
-console.log(selector.innerText) // leva em conta o CSS
-console.log(selector.innerHTML) // trás tudo
+//console.log(selector.textContent) //so HTML
+//console.log(selector.innerText) // leva em conta o CSS
+//console.log(selector.innerHTML) // trás tudo
+
+/* Evento */
+
+const input1 = document.querySelector('#main-input');
+const acho = document.querySelector('.acho');
+
+function clique() {
+    // Pegamos o valor NO MOMENTO do clique
+    const itemx = input1.value; 
+    console.log("Elemento input:", input1);
+    console.log("Valor digitado:", itemx);
+    console.log("Elemento clicado:", acho);
+    acho.innerHTML = itemx; 
+}
+
+function digitei() {
+    // Pegamos o valor NO MOMENTO da digitação
+    // Certifique-se que o ID no HTML é 'input' ou '#main-input'
+    let texto = document.querySelector('#main-input').value; 
+    //console.log("Texto atual:", texto);
+}
+
+const select = document.querySelector('select')
+const button = document.querySelector('.main-button')
+
+function troqueiValor(event){
+    console.log(event)
+}
+
+//select.addEventListener('change', function(){})
+
+select.addEventListener('change', troqueiValor())
+
+input1.addEventListener('keypress', troqueiValor())
