@@ -3,48 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Banco - ex04</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <img src="img/logo.gif" alt="logo">
-        <div>
-            <label for="">
-                <select name="state">
-                    <option></option>
-                    <option></option>
-                    <option></option>
+    <main>
+        <header><img class="img-logo" src="img/logo.gif" alt="logo"></header>
+        <div class="section">
+            <label for="state">Converter <b>de</b> </b>
+                <select name="state" class="section-select">
+                    <option><i>R$</i> Real brasileiro</option>
+                    <option><i>US$</i> Dólar americano</option>
+                    <option><i>€</i> Euro</option>
+                    <option><i>£</i> Libra</option>
+                    <option><i>₿</i> Bitcoin</option>
                 </select>
             </label>
-            <label for="">
-                <select name="state">
-                    <option></option>
-                    <option></option>
-                    <option></option>
+            <label for="state">Converter <b>para</b>
+                <select name="state" class="section-select">
+                    <option><i>R$</i> Real brasileiro</option>
+                    <option><i>US$</i> Dólar americano</option>
+                    <option><i>€</i> Euro</option>
+                    <option><i>£</i> Libra</option>
+                    <option><i>₿</i> Bitcoin</option>
                 </select>
             </label>
-            <label for="">
-                <input type="number">
+            <label for="">Valor
+                <input type="number" class="section-select section-input" placeholder="100,00">
             </label>
-            <button>Converter</button>
-            <div>
-                <div>
-                    <img src="img/br.png" alt="Brasil">
-                    <div>
-                        <p><i>R$</i>0,00</p>
+            <button class="section-button">Converter</button>
+            <div class="moeda">
+                <div class="moeda-div">
+                    <img class="moeda-div-img" src="img/br.png" alt="Brasil">
+                    <div class="moeda-koin">
+                        <h6>Real</h6>
+                        <p><i>R$</i> 0,00</p>
                     </div>
                 </div>
-                <img src="img/Vector.png" alt="">
-                <div>
-                    <img src="img/br.png" alt="Brasil">
-                    <div>
-                        <p><i>R$</i>0,00</p>
+                <div class="moeda-div"><img class="moeda-img" src="img/Vector.png" alt=""></div>
+                <div class="moeda-div">
+                    <img class="moeda-div-img" src="img/br.png" alt="Brasil">
+                    <div class="moeda-koin">
+                        <h6>Real</h6>
+                        <p><i>R$</i> 0,00</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 <script src="script.js"></script>
 </html>

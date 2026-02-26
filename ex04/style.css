@@ -1,3 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-color: #8A51FC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    cursor: pointer;
+}
+
+main{
+    margin:0 40%;
+    max-width: 640px;
+}
+
+.img-logo{
+    width: 300px;
+}
+
+.section{
+    background-color: #F4F4F4;
+    border-radius: 12px; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.section-select{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(244, 244, 244, 0.1);
+    border: 1px solid rgba(244, 244, 244, 0.1);
+    margin: 5px 0;
+}
+
+
+.section-button{
+    width: 100%;
+    margin: 5px;
+    background-color: #772FD3;
+    padding: 5px;
+    border-radius: 2px;
+    box-shadow: 4px 4px 10px rgba(244, 244, 244, 0.1);
+    border: 2px solid rgba(244, 244, 244, 0.1);
+    color: #FFFFFF;
+}
+
+.moeda{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(244, 244, 244, 0.1);
+    border: 2px solid #772FD3;
+    display: flex;
+    flex-direction: column;
+}
+
+.moeda-div{
+    margin: 0 30%;
+}
+
+.moeda-img{
+    padding: 0 10px
+}
+
+.moeda-koin{
+    padding: 0 10px;
+    text-align: center;
+}
+
+.moeda-div img{
+    margin: 5px 30%;
+}
+
+.moeda-div-img{
+    width: 44px;
+    height: 44px;
+}
+
+.moeda-koin h6{
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #777777;
+}
+
+.moeda-koin p{
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #555555;
 }
