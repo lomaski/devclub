@@ -15,7 +15,7 @@
         <header><img class="img-logo" src="img/logo.gif" alt="logo"></header>
         <div class="section">
             <label for="state">Converter <b>de</b> </b>
-                <select name="state" class="section-select">
+                <select onkeypress="digitei()" name="state" class="section-select coin">
                     <option><i>R$</i> Real brasileiro</option>
                     <option><i>US$</i> Dólar americano</option>
                     <option><i>€</i> Euro</option>
@@ -24,7 +24,7 @@
                 </select>
             </label>
             <label for="state">Converter <b>para</b>
-                <select name="state" class="section-select">
+                <select onkeypress="digitei()" name="state" class="section-select  coin">
                     <option><i>R$</i> Real brasileiro</option>
                     <option><i>US$</i> Dólar americano</option>
                     <option><i>€</i> Euro</option>
@@ -35,7 +35,7 @@
             <label for="">Valor
                 <input type="number" class="section-select section-input" placeholder="100,00">
             </label>
-            <button class="section-button">Converter</button>
+            <button onclick="clique()" class="section-button">Converter</button>
             <div class="moeda">
                 <div class="moeda-div">
                     <img class="moeda-div-img" src="img/br.png" alt="Brasil">
