@@ -13,27 +13,27 @@
 <body>
     <main>
         <header><img class="img-logo" src="img/logo.gif" alt="logo"></header>
-        <div class="section">
+        <section class="section">
             <label for="state">Converter <b>de</b> </b>
                 <select onkeypress="digitei()" name="state" class="section-select coin">
-                    <option><i>R$</i> Real brasileiro</option>
-                    <option><i>US$</i> Dólar americano</option>
-                    <option><i>€</i> Euro</option>
-                    <option><i>£</i> Libra</option>
-                    <option><i>₿</i> Bitcoin</option>
+                    <option class="br"><i>R$</i> Real brasileiro</option>
+                    <option class="usa"><i>US$</i> Dólar americano</option>
+                    <option class="euro"><i>€</i> Euro</option>
+                    <option class="uk"><i>£</i> Libra</option>
+                    <option class="bi"><i>₿</i> Bitcoin</option>
                 </select>
             </label>
             <label for="state">Converter <b>para</b>
                 <select onkeypress="digitei()" name="state" class="section-select  coin">
-                    <option><i>R$</i> Real brasileiro</option>
-                    <option><i>US$</i> Dólar americano</option>
-                    <option><i>€</i> Euro</option>
-                    <option><i>£</i> Libra</option>
-                    <option><i>₿</i> Bitcoin</option>
+                    <option class="br"><i>R$</i> Real brasileiro</option>
+                    <option class="usa"><i>US$</i> Dólar americano</option>
+                    <option class="euro"><i>€</i> Euro</option>
+                    <option class="uk"><i>£</i> Libra</option>
+                    <option class="bi"><i>₿</i> Bitcoin</option>
                 </select>
             </label>
             <label for="">Valor
-                <input type="number" class="section-select section-input" placeholder="100,00">
+                <input type="number" class="section-select section-input" placeholder="R$ 100,00">
             </label>
             <button onclick="clique()" class="section-button">Converter</button>
             <div class="moeda">
@@ -46,14 +46,14 @@
                 </div>
                 <div class="moeda-div"><img class="moeda-img" src="img/Vector.png" alt=""></div>
                 <div class="moeda-div">
-                    <img class="moeda-div-img" src="img/br.png" alt="Brasil">
+                    <img class="moeda-div-img" src="img/eua.png" alt="Brasil">
                     <div class="moeda-koin">
-                        <h6>Real</h6>
-                        <p><i>R$</i> 0,00</p>
+                        <h6>Dólar</h6>
+                        <p><i>US$</i> 0,00</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 </body>
 <script src="script.js"></script>
