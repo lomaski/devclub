@@ -12,4 +12,5 @@
     <li><a href="https://lomaski.github.io/devclub/ex01/">We Care</a></li>
     <li><a href="https://lomaski.github.io/devclub/ex02/">Wide coverage location</a></li>
     <li><a href="https://lomaski.github.io/devclub/ex03/">Easy Shopping Via Mobile</a></li>
+    <li><a href="https://lomaski.github.io/devclub/ex04/">Cash Cash</a></li>
 </ul>
