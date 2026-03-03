@@ -5,6 +5,7 @@
 <ul>
     <li>HTML</li>
     <li>CSS</li>
+    <li>JavaScript</li>
 </ul>
 <br>
 <h2>:mortar_board: </h2>
