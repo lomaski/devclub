@@ -1,55 +1,97 @@
-let coin = document.querySelectorAll('.coin')
-let valor = document.querySelector('.section-input')
-let div = document.querySelectorAll('.moeda-div')
-let coin1 = coin[0].className
-let coin2 = coin[1].className
+const buttonConversion = document.querySelector('.button-conversion')
+const coin = document.querySelectorAll('.coin')
 
 
-const moeda = [
-    br = [
-        'R$',
-        'Real',
-        'br'
-    ],
-    usa = [
-        'US$',
-        'Dolar',
-        'eua'
-    ],
-    euro = [
-        '€',
-        'Euro',
-        'euro'
-    ],
-    uk = [
-        '£',
-        'Libra',
-        'uk'
-    ],
-    bi = [
-        '₿',
-        'Bitcoin',
-        'Bitcoin'
-    ]
-]
+function conValues(){
+    const inputValue = document.querySelector('.section-input')
+    const r1 = document.querySelector('.r1')
+    const r2 = document.querySelector('.r2')
+    const dolasToday = 5.17
+    const euroToday = 6.08
+    const realToday = 0.19
+    const libraToday = 6.93
+    const bitcoinToday = 353392.97
+    const cVal = inputValue.value / dolasToday
+    
+    //console.log(coin[0].value)
+
+    r1.innerHTML = new Intl.NumberFormat("pt-br", {
+        style: "currency", currency: "BRL"
+    }).format(inputValue.value)
+    
+    
 
 
 
-function clique(){
-    coin1 = coin[0].className
-    coin2 = coin[1].className
+    if(coin[0].value == "dolar"){
+        r2.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency", currency: 'USD'
+        }).format(cVal)
+    }
+    if(coin[0].value == "euro"){
+        r2.innerHTML = new Intl.NumberFormat("en", {
+            style: "currency", currency: 'EUR'
+        }).format(inputValue.value / euroToday)
+    }
+    if(coin[0].value == "real"){
+        r2.innerHTML = new Intl.NumberFormat("pt-br", {
+            style: "currency", currency: 'BRL'
+        }).format(inputValue.value / realToday)
+    }
+    if(coin[0].value == "libra"){
+        r2.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency", currency: 'GBP'
+        }).format(inputValue.value / libraToday)
+    }
+    if(coin[0].value == "bitcoin"){
+        r2.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency", currency: 'XBT',
+            minimumFractionDigits: 2, // Customize as needed, BTC often uses more
+            maximumFractionDigits: 8  // BTC can have up to 8 decimal places 
+        }).format(inputValue.value / bitcoinToday)
+    }
 
-    num = valor.value
 
-    console.log(coin1+' + '+coin2+' + '+num)
 }
 
-function digitei(){
-    console.log(coin[0].value)
-    console.log(coin[1].value)
-    console.log(valor.value)
+function change(){
+    console.log('Ch-ch-ch-ch-changes')
+
+    const name1 = document.getElementById('name1')
+    const name2 = document.getElementById('name2')
+    const img = document.querySelectorAll('.moeda-div-img')
+
+    if (coin[0].value == 'dolar') {
+        name1.innerHTML = 'Dólar'
+        img[0].src = "img/eua.png"
+    }
+
+    if (coin[0].value == 'euro') {
+        name1.innerHTML = 'Euro'
+        img[0].src = "img/euro.png"
+    }
+
+    if (coin[0].value == 'real') {
+        name1.innerHTML = 'Real'
+        img[0].src = "img/br.png"
+    }
+
+    if (coin[0].value == 'libra') {
+        name1.innerHTML = 'Libra'
+        img[0].src = "img/uk.png"
+    }
+    
+    if (coin[0].value == 'bitcoin') {
+        name1.innerHTML = 'Bitcoin'
+        img[0].src = "img/bit.png"
+    }
+
+
+
+    conValues()
 }
 
 
-coin[0].addEventListener("click", digitei)
-coin[1].addEventListener("click", digitei)
+coin[0].addEventListener('change', change)
+coin[1].addEventListener('change', change)
+buttonConversion.addEventListener('click', conValues)
