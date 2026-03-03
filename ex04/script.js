@@ -24,26 +24,55 @@ function conValues(){
 
 
     if(coin[0].value == "dolar"){
-        r2.innerHTML = new Intl.NumberFormat("en-US", {
+        r1.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency", currency: 'USD'
         }).format(cVal)
     }
     if(coin[0].value == "euro"){
-        r2.innerHTML = new Intl.NumberFormat("en", {
+        r1.innerHTML = new Intl.NumberFormat("en", {
             style: "currency", currency: 'EUR'
         }).format(inputValue.value / euroToday)
     }
     if(coin[0].value == "real"){
-        r2.innerHTML = new Intl.NumberFormat("pt-br", {
+        r1.innerHTML = new Intl.NumberFormat("pt-br", {
             style: "currency", currency: 'BRL'
         }).format(inputValue.value / realToday)
     }
     if(coin[0].value == "libra"){
-        r2.innerHTML = new Intl.NumberFormat("en-GB", {
+        r1.innerHTML = new Intl.NumberFormat("en-GB", {
             style: "currency", currency: 'GBP'
         }).format(inputValue.value / libraToday)
     }
     if(coin[0].value == "bitcoin"){
+        r1.innerHTML = new Intl.NumberFormat('en-US', {
+            style: "currency", currency: 'XBT',
+            minimumFractionDigits: 2, // Customize as needed, BTC often uses more
+            maximumFractionDigits: 8  // BTC can have up to 8 decimal places 
+        }).format(inputValue.value / bitcoinToday)
+    }
+
+
+    if(coin[1].value == "dolar"){
+        r2.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency", currency: 'USD'
+        }).format(cVal)
+    }
+    if(coin[1].value == "euro"){
+        r2.innerHTML = new Intl.NumberFormat("en", {
+            style: "currency", currency: 'EUR'
+        }).format(inputValue.value / euroToday)
+    }
+    if(coin[1].value == "real"){
+        r2.innerHTML = new Intl.NumberFormat("pt-br", {
+            style: "currency", currency: 'BRL'
+        }).format(inputValue.value / realToday)
+    }
+    if(coin[1].value == "libra"){
+        r2.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency", currency: 'GBP'
+        }).format(inputValue.value / libraToday)
+    }
+    if(coin[1].value == "bitcoin"){
         r2.innerHTML = new Intl.NumberFormat('en-US', {
             style: "currency", currency: 'XBT',
             minimumFractionDigits: 2, // Customize as needed, BTC often uses more
@@ -55,7 +84,7 @@ function conValues(){
 }
 
 function change(){
-    console.log('Ch-ch-ch-ch-changes')
+    //console.log('Ch-ch-ch-ch-changes')
 
     const name1 = document.getElementById('name1')
     const name2 = document.getElementById('name2')
@@ -87,6 +116,31 @@ function change(){
     }
 
 
+
+    if (coin[1].value == 'dolar') {
+        name2.innerHTML = 'Dólar'
+        img[1].src = "img/eua.png"
+    }
+
+    if (coin[1].value == 'euro') {
+        name2.innerHTML = 'Euro'
+        img[1].src = "img/euro.png"
+    }
+
+    if (coin[1].value == 'real') {
+        name2.innerHTML = 'Real'
+        img[1].src = "img/br.png"
+    }
+
+    if (coin[1].value == 'libra') {
+        name2.innerHTML = 'Libra'
+        img[1].src = "img/uk.png"
+    }
+    
+    if (coin[1].value == 'bitcoin') {
+        name2.innerHTML = 'Bitcoin'
+        img[1].src = "img/bit.png"
+    }
 
     conValues()
 }
