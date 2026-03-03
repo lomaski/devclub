@@ -15,40 +15,33 @@ function conValues(){
     
     //console.log(coin[0].value)
 
-    r1.innerHTML = new Intl.NumberFormat("pt-br", {
-        style: "currency", currency: "BRL"
-    }).format(inputValue.value)
-    
-    
-
-
 
     if(coin[0].value == "dolar"){
         r1.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency", currency: 'USD'
-        }).format(cVal)
+        }).format(dolasToday)
     }
     if(coin[0].value == "euro"){
         r1.innerHTML = new Intl.NumberFormat("en", {
             style: "currency", currency: 'EUR'
-        }).format(inputValue.value / euroToday)
+        }).format(euroToday)
     }
     if(coin[0].value == "real"){
         r1.innerHTML = new Intl.NumberFormat("pt-br", {
             style: "currency", currency: 'BRL'
-        }).format(inputValue.value / realToday)
+        }).format(realToday)
     }
     if(coin[0].value == "libra"){
         r1.innerHTML = new Intl.NumberFormat("en-GB", {
             style: "currency", currency: 'GBP'
-        }).format(inputValue.value / libraToday)
+        }).format(libraToday)
     }
     if(coin[0].value == "bitcoin"){
         r1.innerHTML = new Intl.NumberFormat('en-US', {
             style: "currency", currency: 'XBT',
             minimumFractionDigits: 2, // Customize as needed, BTC often uses more
             maximumFractionDigits: 8  // BTC can have up to 8 decimal places 
-        }).format(inputValue.value / bitcoinToday)
+        }).format(bitcoinToday)
     }
 
 
