@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+header{
+    display: block;
+    margin: 20px auto;
+}
+
+header img{
+    display: block;
+    margin: auto;
+    width: 400px;
+}
+
+section{
+    display: block;
+    margin: auto;
+    width: 440px;
+}
+
+section h1{
+    display: block;
+    margin: auto;
+    width: 260px;
+}
+
+section .section-div{
+    display: block;
+    margin: auto;
+}
+
+section input{
+    background-color: #D3D3D3;
+    color: black;
+    width: 203px;
+    margin-right: 15px;
+    border-radius: 12px; 
+    box-shadow: 4px 4px 10px rgba(0,0,0);
+    height: 38px;
+    padding: 10px;
+}
+
+section button{
+    width: 203px;
+    height: 32px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 12px; 
+    box-shadow: 4px 4px 10px rgba(0,0,0);
+    background:#AEC346;
+    color: #FFFFFF;
+    font-size: medium;
+}
+
+section button:hover{
+    opacity: 0.8;
+}
+
+section button:active{
+    opacity: 0.6;
+}
+
+.result{
+    display: block;
+    margin: auto;
+    padding: 20px;
+    width: 200px;
+}
