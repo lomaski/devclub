@@ -43,7 +43,7 @@ section .section-div{
 section input{
     background-color: #D3D3D3;
     color: black;
-    width: 203px;
+    width: 46%;
     margin-right: 15px;
     border-radius: 12px; 
     box-shadow: 4px 4px 10px rgba(0,0,0);
