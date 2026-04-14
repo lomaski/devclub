@@ -1,143 +1,72 @@
 const buttonConversion = document.querySelector('.button-conversion')
 const coin = document.querySelectorAll('.coin')
 
-
-function conValues(){
-    const inputValue = document.querySelector('.section-input')
+function conValues() {
+    const inputValue = document.querySelector('.section-input').value
     const r1 = document.querySelector('.r1')
     const r2 = document.querySelector('.r2')
-    const dolasToday = 5.17
-    const euroToday = 6.08
-    const realToday = 0.19
-    const libraToday = 6.93
-    const bitcoinToday = 353392.97
-    const cVal = inputValue.value / dolasToday
-    
-    //console.log(coin[0].value)
 
-
-    if(coin[0].value == "dolar"){
-        r1.innerHTML = new Intl.NumberFormat("en-US", {
-            style: "currency", currency: 'USD'
-        }).format(dolasToday)
-    }
-    if(coin[0].value == "euro"){
-        r1.innerHTML = new Intl.NumberFormat("en", {
-            style: "currency", currency: 'EUR'
-        }).format(euroToday)
-    }
-    if(coin[0].value == "real"){
-        r1.innerHTML = new Intl.NumberFormat("pt-br", {
-            style: "currency", currency: 'BRL'
-        }).format(realToday)
-    }
-    if(coin[0].value == "libra"){
-        r1.innerHTML = new Intl.NumberFormat("en-GB", {
-            style: "currency", currency: 'GBP'
-        }).format(libraToday)
-    }
-    if(coin[0].value == "bitcoin"){
-        r1.innerHTML = new Intl.NumberFormat('en-US', {
-            style: "currency", currency: 'XBT',
-            minimumFractionDigits: 2, // Customize as needed, BTC often uses more
-            maximumFractionDigits: 8  // BTC can have up to 8 decimal places 
-        }).format(bitcoinToday)
+    // Taxas de conversão (Ex: 1 Moeda = X Reais)
+    const rates = {
+        real: 1,
+        dolar: 5.17,
+        euro: 6.08,
+        libra: 6.93,
+        bitcoin: 353392.97
     }
 
-
-    if(coin[1].value == "dolar"){
-        r2.innerHTML = new Intl.NumberFormat("en-US", {
-            style: "currency", currency: 'USD'
-        }).format(cVal)
-    }
-    if(coin[1].value == "euro"){
-        r2.innerHTML = new Intl.NumberFormat("en", {
-            style: "currency", currency: 'EUR'
-        }).format(inputValue.value / euroToday)
-    }
-    if(coin[1].value == "real"){
-        r2.innerHTML = new Intl.NumberFormat("pt-br", {
-            style: "currency", currency: 'BRL'
-        }).format(inputValue.value / realToday)
-    }
-    if(coin[1].value == "libra"){
-        r2.innerHTML = new Intl.NumberFormat("en-GB", {
-            style: "currency", currency: 'GBP'
-        }).format(inputValue.value / libraToday)
-    }
-    if(coin[1].value == "bitcoin"){
-        r2.innerHTML = new Intl.NumberFormat('en-US', {
-            style: "currency", currency: 'XBT',
-            minimumFractionDigits: 2, // Customize as needed, BTC often uses more
-            maximumFractionDigits: 8  // BTC can have up to 8 decimal places 
-        }).format(inputValue.value / bitcoinToday)
+    // Configurações de formatação
+    const formats = {
+        real: { locale: 'pt-BR', currency: 'BRL' },
+        dolar: { locale: 'en-US', currency: 'USD' },
+        euro: { locale: 'de-DE', currency: 'EUR' },
+        libra: { locale: 'en-GB', currency: 'GBP' },
+        bitcoin: { locale: 'en-US', currency: 'BTC' }
     }
 
+    const fromCurrency = coin[0].value
+    const toCurrency = coin[1].value
 
+    // Lógica: Converte o valor de origem para Real, depois para o destino
+    const valueInReal = inputValue * rates[fromCurrency]
+    const result = valueInReal / rates[toCurrency]
+
+    // Exibe o valor de origem (r1)
+    r1.innerHTML = new Intl.NumberFormat(formats[fromCurrency].locale, {
+        style: 'currency', currency: formats[fromCurrency].currency
+    }).format(inputValue)
+
+    // Exibe o valor convertido (r2)
+    r2.innerHTML = new Intl.NumberFormat(formats[toCurrency].locale, {
+        style: 'currency', 
+        currency: formats[toCurrency].currency,
+        minimumFractionDigits: toCurrency === 'bitcoin' ? 8 : 2
+    }).format(result)
 }
 
-function change(){
-    //console.log('Ch-ch-ch-ch-changes')
-
+function change() {
     const name1 = document.getElementById('name1')
     const name2 = document.getElementById('name2')
     const img = document.querySelectorAll('.moeda-div-img')
 
-    if (coin[0].value == 'dolar') {
-        name1.innerHTML = 'Dólar'
-        img[0].src = "img/eua.png"
+    const data = {
+        dolar: { name: 'Dólar', img: 'img/eua.png' },
+        euro: { name: 'Euro', img: 'img/euro.png' },
+        real: { name: 'Real', img: 'img/br.png' },
+        libra: { name: 'Libra', img: 'img/uk.png' },
+        bitcoin: { name: 'Bitcoin', img: 'img/bit.png' }
     }
 
-    if (coin[0].value == 'euro') {
-        name1.innerHTML = 'Euro'
-        img[0].src = "img/euro.png"
-    }
+    // Atualiza Origem
+    name1.innerHTML = data[coin[0].value].name
+    img[0].src = data[coin[0].value].img
 
-    if (coin[0].value == 'real') {
-        name1.innerHTML = 'Real'
-        img[0].src = "img/br.png"
-    }
-
-    if (coin[0].value == 'libra') {
-        name1.innerHTML = 'Libra'
-        img[0].src = "img/uk.png"
-    }
-    
-    if (coin[0].value == 'bitcoin') {
-        name1.innerHTML = 'Bitcoin'
-        img[0].src = "img/bit.png"
-    }
-
-
-
-    if (coin[1].value == 'dolar') {
-        name2.innerHTML = 'Dólar'
-        img[1].src = "img/eua.png"
-    }
-
-    if (coin[1].value == 'euro') {
-        name2.innerHTML = 'Euro'
-        img[1].src = "img/euro.png"
-    }
-
-    if (coin[1].value == 'real') {
-        name2.innerHTML = 'Real'
-        img[1].src = "img/br.png"
-    }
-
-    if (coin[1].value == 'libra') {
-        name2.innerHTML = 'Libra'
-        img[1].src = "img/uk.png"
-    }
-    
-    if (coin[1].value == 'bitcoin') {
-        name2.innerHTML = 'Bitcoin'
-        img[1].src = "img/bit.png"
-    }
+    // Atualiza Destino
+    name2.innerHTML = data[coin[1].value].name
+    img[1].src = data[coin[1].value].img
 
     conValues()
 }
-
 
 coin[0].addEventListener('change', change)
 coin[1].addEventListener('change', change)
