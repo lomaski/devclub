@@ -6,6 +6,7 @@
     <li>HTML</li>
     <li>CSS</li>
     <li>JavaScript</li>
+    <li>React</li>
 </ul>
 <br>
 <h2>🎓 University</h2>
