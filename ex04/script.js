@@ -1,27 +1,55 @@
 const buttonConversion = document.querySelector('.button-conversion')
 const coin = document.querySelectorAll('.coin')
 
+
+const rates = {
+    real: 1,
+    dolar: 5.17, // Valor padrão caso a API falhe
+    euro: 6.08,
+    libra: 6.93,
+    bitcoin: 353392.97
+}
+
+// Configurações de formatação
+const formats = {
+    real: { locale: 'pt-BR', currency: 'BRL' },
+    dolar: { locale: 'en-US', currency: 'USD' },
+    euro: { locale: 'de-DE', currency: 'EUR' },
+    libra: { locale: 'en-GB', currency: 'GBP' },
+    bitcoin: { locale: 'en-US', currency: 'BTC' }
+}
+
+const API_URL = "https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,GBP-BRL,BTC-BRL"
+
+fetch(API_URL)
+    .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`)
+        return response.json()
+    })
+    .then(data => {
+        rates.dolar = parseFloat(data.USDBRL.bid)
+        rates.euro = parseFloat(data.EURBRL.bid)
+        rates.libra = parseFloat(data.GBPBRL.bid)
+        
+        if (data.BTCBRL) {
+            rates.bitcoin = parseFloat(data.BTCBRL.bid)
+        }
+        
+        console.log("✅ Moedas atualizadas com sucesso!")
+        conValues() // Atualiza a tela com os novos valores
+    })
+    .catch(error => {
+        console.warn("⚠️ Usando taxas offline:", error.message)
+    });
+
 function conValues() {
     const inputValue = document.querySelector('.section-input').value
     const r1 = document.querySelector('.r1')
     const r2 = document.querySelector('.r2')
-
-    // Taxas de conversão (Ex: 1 Moeda = X Reais)
-    const rates = {
-        real: 1,
-        dolar: 5.17,
-        euro: 6.08,
-        libra: 6.93,
-        bitcoin: 353392.97
-    }
-
-    // Configurações de formatação
-    const formats = {
-        real: { locale: 'pt-BR', currency: 'BRL' },
-        dolar: { locale: 'en-US', currency: 'USD' },
-        euro: { locale: 'de-DE', currency: 'EUR' },
-        libra: { locale: 'en-GB', currency: 'GBP' },
-        bitcoin: { locale: 'en-US', currency: 'BTC' }
+    if (!inputValue || inputValue <= 0) {
+        r1.innerHTML = "R$ 0,00"
+        r2.innerHTML = "R$ 0,00"
+        return
     }
 
     const fromCurrency = coin[0].value
@@ -68,6 +96,23 @@ function change() {
     conValues()
 }
 
+// Ouvintes de eventos corrigidos
 coin[0].addEventListener('change', change)
 coin[1].addEventListener('change', change)
 buttonConversion.addEventListener('click', conValues)
+
+// No final do arquivo
+document.addEventListener('DOMContentLoaded', () => {
+    change() // Atualiza nomes e imagens
+    conValues() // Calcula valores iniciais
+})
+
+let timeoutId
+buttonConversion.addEventListener('click', () => {
+    clearTimeout(timeoutId)
+    timeoutId = setTimeout(conValues, 100)
+})
+
+if (!buttonConversion || coin.length < 2) {
+    console.error("❌ Elementos do DOM não encontrados!")
+}
